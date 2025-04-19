@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Input } from './ui/input';
-import { Copy, ArrowUpFromLine, ArrowDownToLine, ExternalLink } from 'lucide-react';
+import { Copy, ArrowUpFromLine, ArrowDownToLine, ExternalLink, Users, MessagesSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const DashboardSection: React.FC = () => {

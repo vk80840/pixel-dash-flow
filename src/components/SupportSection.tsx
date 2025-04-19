@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -50,7 +49,6 @@ const SupportSection: React.FC = () => {
   const [chatMessage, setChatMessage] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Sample ticket data
   const tickets: Ticket[] = [
     {
       id: 'TKT-10045',
@@ -254,7 +252,10 @@ const SupportSection: React.FC = () => {
                   />
                 </div>
                 <Button variant="outline" className="shrink-0 neon-glow" onClick={() => {
-                  document.querySelector('[data-state="inactive"][data-value="new-ticket"]')?.click();
+                  const element = document.querySelector('[data-state="inactive"][data-value="new-ticket"]');
+                  if (element instanceof HTMLElement) {
+                    element.click();
+                  }
                 }}>
                   <Plus className="h-4 w-4 mr-2" />
                   New Ticket
@@ -316,7 +317,10 @@ const SupportSection: React.FC = () => {
                       variant="outline"
                       className="neon-glow"
                       onClick={() => {
-                        document.querySelector('[data-state="inactive"][data-value="new-ticket"]')?.click();
+                        const element = document.querySelector('[data-state="inactive"][data-value="new-ticket"]');
+                        if (element instanceof HTMLElement) {
+                          element.click();
+                        }
                       }}
                     >
                       <Plus className="h-4 w-4 mr-2" />
