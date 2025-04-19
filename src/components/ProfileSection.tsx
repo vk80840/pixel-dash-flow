@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -6,11 +5,10 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/components/ui/sonner';
 import { Upload, Copy, Camera } from 'lucide-react';
 
 const ProfileSection: React.FC = () => {
-  const { toast } = useToast();
   const [profileImage, setProfileImage] = useState<string | null>(null);
 
   const handleProfileImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,8 +26,7 @@ const ProfileSection: React.FC = () => {
 
   const handleSaveProfile = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Profile updated",
+    toast("Profile updated", {
       description: "Your profile has been updated successfully.",
       duration: 3000,
     });
@@ -37,8 +34,7 @@ const ProfileSection: React.FC = () => {
 
   const handleCopyAccountNumber = () => {
     navigator.clipboard.writeText("7892-3750-1594-2038");
-    toast({
-      title: "Copied to clipboard",
+    toast("Copied to clipboard", {
       description: "Account number has been copied successfully",
       duration: 3000,
     });

@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Copy, QrCode, Upload } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/components/ui/sonner';
 import { 
   Select,
   SelectContent,
@@ -15,15 +14,13 @@ import {
 } from './ui/select';
 
 const DepositSection: React.FC = () => {
-  const { toast } = useToast();
   const [selectedMethod, setSelectedMethod] = useState<string>('btc');
   const [amount, setAmount] = useState<string>('');
   const [file, setFile] = useState<File | null>(null);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
-    toast({
-      title: "Copied to clipboard",
+    toast("Copied to clipboard", {
       description: "Address has been copied successfully",
       duration: 3000,
     });
@@ -37,8 +34,7 @@ const DepositSection: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Deposit request submitted",
+    toast("Deposit request submitted", {
       description: "Your deposit request has been received and will be processed soon.",
       duration: 3000,
     });

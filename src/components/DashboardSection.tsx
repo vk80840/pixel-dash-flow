@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -6,15 +5,12 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Input } from './ui/input';
 import { Copy, ArrowUpFromLine, ArrowDownToLine, ExternalLink, Users, MessagesSquare } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/components/ui/sonner';
 
 const DashboardSection: React.FC = () => {
-  const { toast } = useToast();
-
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    toast({
-      title: "Copied to clipboard",
+    toast("Copied to clipboard", {
       description: "Referral link has been copied successfully",
       duration: 3000,
     });
@@ -52,8 +48,7 @@ const DashboardSection: React.FC = () => {
           </div>
         </CardContent>
         <CardFooter>
-          <Button variant="outline" className="w-full neon-glow" onClick={() => toast({
-            title: "Coming Soon",
+          <Button variant="outline" className="w-full neon-glow" onClick={() => toast("Coming Soon", {
             description: "This feature is currently under development",
             duration: 3000,
           })}>

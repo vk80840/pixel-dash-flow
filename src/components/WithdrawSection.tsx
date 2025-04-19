@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/components/ui/sonner';
 import { 
   Select,
   SelectContent,
@@ -15,7 +14,6 @@ import {
 import { InfoIcon } from 'lucide-react';
 
 const WithdrawSection: React.FC = () => {
-  const { toast } = useToast();
   const [withdrawMethod, setWithdrawMethod] = useState<string>('btc');
   const [amount, setAmount] = useState<string>('');
   const [address, setAddress] = useState<string>('');
@@ -24,8 +22,7 @@ const WithdrawSection: React.FC = () => {
     e.preventDefault();
     
     if (parseFloat(amount) > 12365.75) {
-      toast({
-        title: "Insufficient balance",
+      toast("Insufficient balance", {
         description: "You don't have enough balance to withdraw this amount.",
         variant: "destructive",
         duration: 3000,
@@ -33,8 +30,7 @@ const WithdrawSection: React.FC = () => {
       return;
     }
     
-    toast({
-      title: "Withdrawal request submitted",
+    toast("Withdrawal request submitted", {
       description: "Your withdrawal request has been received and will be processed within 24 hours.",
       duration: 3000,
     });
