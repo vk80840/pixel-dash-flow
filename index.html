@@ -1,27 +1,53 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pixel-dash-flow</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLM Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="placeholder.svg" alt="Logo" class="logo">
+                <h1>MLM Dashboard</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-section="team">Team</a>
+                <a href="#" class="nav-link" data-section="withdraw">Withdraw</a>
+                <a href="#" class="nav-link" data-section="tree">Tree View</a>
+            </div>
+        </nav>
 
-    <meta property="og:title" content="pixel-dash-flow" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        <main class="main-content">
+            <header class="top-header">
+                <div class="user-info">
+                    <img src="placeholder.svg" alt="Profile" class="profile-img">
+                    <span>Welcome, User</span>
+                </div>
+            </header>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+            <div id="dashboard-section" class="section active">
+                <!-- Dashboard content will be loaded here -->
+            </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+            <div id="team-section" class="section">
+                <!-- Team content will be loaded here -->
+            </div>
+
+            <div id="withdraw-section" class="section">
+                <!-- Withdraw content will be loaded here -->
+            </div>
+
+            <div id="tree-section" class="section">
+                <!-- Tree view content will be loaded here -->
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
 </html>
