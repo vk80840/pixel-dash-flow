@@ -24,7 +24,6 @@ const WithdrawSection: React.FC = () => {
     if (parseFloat(amount) > 12365.75) {
       toast("Insufficient balance", {
         description: "You don't have enough balance to withdraw this amount.",
-        variant: "destructive",
         duration: 3000,
       });
       return;
